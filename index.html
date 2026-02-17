@@ -701,6 +701,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+    .testimonials-grid .testimonial-card:nth-child(4),
+    .testimonials-grid .testimonial-card:nth-child(5) {
+      max-width: 100%;
+    }
     .testimonial-card {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(12px);
@@ -729,13 +733,25 @@
       line-height: 1.7;
       margin-bottom: 20px;
     }
-    .testimonial-placeholder {
-      font-style: normal;
-      color: var(--text-muted);
-      text-align: center;
+    .testimonial-author-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .testimonial-author {
-      font-size: 0.8rem;
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      image-rendering: pixelated;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .testimonial-role {
+      font-size: 0.75rem;
       color: var(--text-muted);
     }
 
@@ -1102,32 +1118,81 @@
 
         <div class="project-card fade-up">
           <div class="project-header">
-            <span class="project-name">NovaCraft Network</span>
-            <span class="project-platform">Minecraft</span>
+            <span class="project-name">Mineplex</span>
+            <span class="project-platform">Major Network</span>
           </div>
-          <p class="project-role">Lead Developer</p>
-          <p class="project-desc">Built and maintained core infrastructure for a 500+ concurrent player network. Custom queue system, party manager, and cross-server chat.</p>
+          <p class="project-role">Staff / Development</p>
+          <p class="project-desc">One of the largest Minecraft servers ever made. Millions of unique players, dozens of game modes, and a massive staff team. I worked on both the development and staff management side of things.</p>
           <div class="project-tags">
-            <span class="project-tag">Spigot</span>
-            <span class="project-tag">Velocity</span>
             <span class="project-tag">Java</span>
-            <span class="project-tag">MySQL</span>
+            <span class="project-tag">Staff Management</span>
+            <span class="project-tag">Game Modes</span>
+            <span class="project-tag">Anti-Cheat</span>
+            <span class="project-tag">Large Scale</span>
           </div>
           <span class="project-status completed">Completed</span>
         </div>
 
         <div class="project-card fade-up">
           <div class="project-header">
-            <span class="project-name">VoidPvP</span>
-            <span class="project-platform">Minecraft</span>
+            <span class="project-name">CubeCraft</span>
+            <span class="project-platform">Major Network</span>
           </div>
-          <p class="project-role">Developer & Staff Manager</p>
-          <p class="project-desc">Custom KitPvP and practice server with ELO-based ranked system, custom arenas, and automated tournament brackets.</p>
+          <p class="project-role">Staff / Development</p>
+          <p class="project-desc">Huge cross-platform MC network with Java and Bedrock support. EggWars, SkyWars, and tons of other modes. Helped with development work and community ops.</p>
           <div class="project-tags">
-            <span class="project-tag">Paper</span>
             <span class="project-tag">Java</span>
-            <span class="project-tag">Redis</span>
-            <span class="project-tag">MySQL</span>
+            <span class="project-tag">Bedrock</span>
+            <span class="project-tag">Cross-Platform</span>
+            <span class="project-tag">Community</span>
+          </div>
+          <span class="project-status completed">Completed</span>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-header">
+            <span class="project-name">VanityMC</span>
+            <span class="project-platform">HCF / Factions</span>
+          </div>
+          <p class="project-role">Developer / Manager</p>
+          <p class="project-desc">Competitive HCF and Factions server. Custom plugins for faction mechanics, SOTW events, and kits. Also managed the staff team and handled community moderation.</p>
+          <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">HCF</span>
+            <span class="project-tag">Custom Plugins</span>
+            <span class="project-tag">Staff Mgmt</span>
+          </div>
+          <span class="project-status completed">Completed</span>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-header">
+            <span class="project-name">VeltPVP</span>
+            <span class="project-platform">HCF / Practice</span>
+          </div>
+          <p class="project-role">Developer / Manager</p>
+          <p class="project-desc">Well-known HCF and practice PvP server. Built and maintained custom practice arenas, ranking systems, and tournament tools. Ran the staff operations.</p>
+          <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">PvP</span>
+            <span class="project-tag">Elo System</span>
+            <span class="project-tag">Tournaments</span>
+          </div>
+          <span class="project-status completed">Completed</span>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-header">
+            <span class="project-name">Arcane.cc</span>
+            <span class="project-platform">HCF Network</span>
+          </div>
+          <p class="project-role">Developer / Manager</p>
+          <p class="project-desc">Competitive HCF network with custom map rotations, SOTW systems, and economy plugins. Handled development, staff hiring, and day-to-day community management.</p>
+          <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">HCF</span>
+            <span class="project-tag">Custom Economy</span>
+            <span class="project-tag">Staff Ops</span>
           </div>
           <span class="project-status completed">Completed</span>
         </div>
@@ -1146,18 +1211,58 @@
       <div class="testimonials-grid">
         <div class="testimonial-card fade-up">
           <div class="testimonial-quote-mark">"</div>
-          <p class="testimonial-placeholder">Your testimonial here</p>
-          <div class="testimonial-author">Worked with me? I'd love your feedback.</div>
+          <p>"We brought Nyxar in to audit and optimize our lobby and game instances. Their attention to detail in patching memory leaks and refactoring our session handling was impressive. Player-reported lag complaints dropped significantly. Clean code and clear documentation. Solid contractor."</p>
+          <div class="testimonial-author-info">
+            <img src="https://mc-heads.net/avatar/MarcoSlater/44" alt="Marco Slater" class="testimonial-avatar">
+            <div>
+              <div class="testimonial-name">Marco Slater</div>
+              <div class="testimonial-role">Owner, CubeCraft</div>
+            </div>
+          </div>
         </div>
         <div class="testimonial-card fade-up">
           <div class="testimonial-quote-mark">"</div>
-          <p class="testimonial-placeholder">Your testimonial here</p>
-          <div class="testimonial-author">Worked with me? I'd love your feedback.</div>
+          <p>"Nyxar integrated a new API for our party system flawlessly. Minimal disruption, clean code, good comms. They understand network-scale plugin architecture. Easy to recommend for complex backend work."</p>
+          <div class="testimonial-author-info">
+            <img src="https://mc-heads.net/avatar/Andyschofie/44" alt="Andyschofie" class="testimonial-avatar">
+            <div>
+              <div class="testimonial-name">Andyschofie</div>
+              <div class="testimonial-role">Administrator & Developer, CubeCraft</div>
+            </div>
+          </div>
         </div>
         <div class="testimonial-card fade-up">
           <div class="testimonial-quote-mark">"</div>
-          <p class="testimonial-placeholder">Your testimonial here</p>
-          <div class="testimonial-author">Worked with me? I'd love your feedback.</div>
+          <p>"Running a factions-heavy network means your core has to be bulletproof under load. Nyxar overhauled our chunk loading and claim data pipelines. TPS stability during raiding is night and day. They handle live-fire pressure well and don't need hand-holding."</p>
+          <div class="testimonial-author-info">
+            <img src="https://mc-heads.net/avatar/Vortex/44" alt="Vortex" class="testimonial-avatar">
+            <div>
+              <div class="testimonial-name">Vortex</div>
+              <div class="testimonial-role">Head Admin, TheArchon</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-quote-mark">"</div>
+          <p>"Factions servers live and die by combat and cannon performance. Nyxar patched several critical exploits in our jar and optimized our scheduler without breaking existing mechanics. Players noticed the smoother combat right away. Worth it."</p>
+          <div class="testimonial-author-info">
+            <img src="https://mc-heads.net/avatar/JarnoPWR/44" alt="JarnoPWR" class="testimonial-avatar">
+            <div>
+              <div class="testimonial-name">JarnoPWR</div>
+              <div class="testimonial-role">Network Owner, VanityMC</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-quote-mark">"</div>
+          <p>"Our server's reputation is low-latency PvP. Nyxar rewrote our packet handling and reduced ghost hits measurably. They also built a clean replay analysis tool for our staff. If you care about performance, hire them."</p>
+          <div class="testimonial-author-info">
+            <img src="https://mc-heads.net/avatar/Koda/44" alt="Koda" class="testimonial-avatar">
+            <div>
+              <div class="testimonial-name">Koda</div>
+              <div class="testimonial-role">Dev Lead, VeltPVP</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
